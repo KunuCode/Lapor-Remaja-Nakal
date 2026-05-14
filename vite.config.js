@@ -2,10 +2,11 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
+    // Tambahkan base: '/' agar Vite tidak menambahkan prefix folder yang salah
+    base: '/', 
+    
     plugins: [
         laravel({
-            // Di sini kita mendaftarkan index.html agar diproses oleh Vite
-            // Pastikan 'index.html' ada di folder utama (root)
             input: ['resources/css/app.css', 'resources/js/app.js', 'index.html'],
             refresh: true,
         }),
